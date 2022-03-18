@@ -2,7 +2,20 @@
 const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
-// Your JavaScript code goes here!
+// Write your code here!
+
+document.getElementsByClassName("like").addEventListener("click", () => {
+  fetch(mimicServerCall())
+  .then(function (response) {
+    return response.json
+  })
+  .catch(function (error) {
+    const errorMessage = document.getElementById("modal");
+    errorMessage.className = "";
+    errorMessage.textContent = error
+    setTimeout(() => errorMessage.className = "hidden", 3000)
+  })
+})
 
 
 
